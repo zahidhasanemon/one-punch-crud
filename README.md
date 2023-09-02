@@ -44,3 +44,5 @@ If you want to migrate the created table, run
 ```
 php artisan make:crud ModelName --migrate
 ```
+
+This single command will make model along with the migration file, two request files to validate store and update process, a full resource controller with basic code for each method, append a new resource route in your web.php file and finally make a folder with index, create, show and edit blade files inside. 

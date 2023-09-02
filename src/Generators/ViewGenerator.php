@@ -20,6 +20,7 @@ class ViewGenerator
 
         file_put_contents("$path/index.blade.php", '');
         file_put_contents("$path/create.blade.php", '');
+        file_put_contents("$path/show.blade.php", '');
         file_put_contents("$path/edit.blade.php", '');
     }
 }
