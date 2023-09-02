@@ -1,0 +1,80 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\Store{{modelName}}Request;
+use App\Http\Requests\Update{{modelName}}Request;
+use Illuminate\Http\Request;
+use App\Models\{{modelName}};
+
+class {{modelName}}Controller extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        ${{modelNamePluralLowerCase}} = {{modelName}}::latest()->get();
+
+        return view('{{modelNamePluralLowerCase}}.index')->with(['{{modelNamePluralLowerCase}}' => ${{modelNamePluralLowerCase}}]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('{{modelNamePluralLowerCase}}.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Store{{modelName}}Request $request)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::create($request->all());
+
+        return redirect()->route('{{modelNamePluralLowerCase}}.index');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($id)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
+
+        return view('{{modelNamePluralLowerCase}}.show')->with(['{{modelNameSingularLowerCase}}' => ${{modelNameSingularLowerCase}}]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
+
+        return view('{{modelNamePluralLowerCase}}.edit')->with(['{{modelNameSingularLowerCase}}' => ${{modelNameSingularLowerCase}}]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Update{{modelName}}Request $request, $id)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
+        ${{modelNameSingularLowerCase}}->update($request->all());
+
+        return redirect()->route('{{modelNamePluralLowerCase}}.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id)
+    {
+        {{modelName}}::destroy($id);
+
+        return redirect()->route('{{modelNamePluralLowerCase}}.index');
+    }
+}

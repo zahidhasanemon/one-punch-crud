@@ -1,0 +1,33 @@
+{
+    "name": "zahidhemon/one-punch-crud",
+    "description": "simple laravel package to implement crud operations for a model with route, view, migration, request and controller",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "crud"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zahidhemon\\OnePunchCrud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "zahid hasan emon",
+            "email": "zhemon5@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4 || ^8.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zahidhemon\\OnePunchCrud\\CrudServiceProvider"
+            ]
+        }
+    }
+}
